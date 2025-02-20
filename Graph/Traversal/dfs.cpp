@@ -15,13 +15,18 @@
 using namespace std;
 
 void dfs(vector<vector<int>> &graph, vector<bool> &visited, int start) {
-    cout<<start<<"->";
+    // visualizing the path
+    cout<<start<<" -> ";
+    // you can write some modification logic here
     visited[start]= true;
     for(auto &child : graph[start]){
         if(!visited[child]){
+            // you can write some modification logic here
             dfs(graph, visited, child);
+            // you can write some modification logic here
         }
     }
+    // you can write some modification logic here
     return;
 }
 
