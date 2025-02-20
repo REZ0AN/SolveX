@@ -18,15 +18,18 @@ void dfs(vector<vector<int>> &graph, vector<bool> &visited, int start) {
     // visualizing the path
     cout<<start<<" -> ";
     // you can write some modification logic here
+    // Take action on vertex after entering the vertex
     visited[start]= true;
     for(auto &child : graph[start]){
         if(!visited[child]){
             // you can write some modification logic here
+            // Take action on child before entering the child node
             dfs(graph, visited, child);
-            // you can write some modification logic here
+            // Take action on child after coming back from the child node
         }
     }
     // you can write some modification logic here
+    // Take action on vertex after coming back from the vertex
     return;
 }
 
