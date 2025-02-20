@@ -1,3 +1,5 @@
+// always thing of forest
+
 #include<iostream>
 #include<vector>
 #include<utility>
@@ -32,7 +34,14 @@ int main() {
     }
     vector<bool>visited(n,false);
 
-    dfs(graph, visited, 1, 0);
+    for(int i = 1; i<=n; i++) {
+        if(!visited[i]) {
+            dfs(graph, visited, i, 0);
+            if(isLoop){
+                break;
+            }
+        }
+    }
     if(isLoop){
         cout<<"YES"<<endl;
     }else {
