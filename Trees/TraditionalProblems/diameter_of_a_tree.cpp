@@ -27,7 +27,7 @@ int main() {
         }
 
     }
-    vector<int> depth(n,0);
+    vector<int> depth(n+1,0);
     int start = 1;
     int parent = 0;
     
@@ -36,7 +36,7 @@ int main() {
     int mx_d_node  = max_element(depth.begin(),depth.end()) - depth.begin();
 
     // getting the node from the mx_d_node and the depth represents the diameter
-    depth.assign(n,0);
+    depth.assign(n+1,0);
     dfs(graph, depth, mx_d_node, parent);
 
     cout<<*max_element(depth.begin(),depth.end())<<endl;

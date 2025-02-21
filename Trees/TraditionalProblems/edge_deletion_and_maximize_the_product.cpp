@@ -31,10 +31,14 @@ int main() {
     vector<int> sub_tree_sum(n+1,0);
     dfs(graph, sub_tree_sum, 1, 0);
 
-    cout<<endl;
-    for(auto x: sub_tree_sum){
-        cout<<x<<" ";
+    int i;
+    long long ans = 0;
+    for(i = 2; i<=n; i++) {
+        int sum1 = sub_tree_sum[i];
+        int sum2 = sub_tree_sum[1] - sum1;
+        
+        ans = max(ans, sum1*sum2*1LL);
     }
-    cout<<endl;
 
+    cout<<ans<<endl;
 }

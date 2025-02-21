@@ -28,8 +28,8 @@ int main() {
         }
 
     }
-    vector<int> depth(n,0);
-    vector<int> height(n,0);
+    vector<int> depth(n+1,0);
+    vector<int> height(n+1,0);
     dfs(graph, depth, height, 1, 0);
     cout<<"Depth: ";
     for(auto x: depth){
